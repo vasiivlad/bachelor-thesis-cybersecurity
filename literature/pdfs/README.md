@@ -1,5 +1,5 @@
-# Literature PDF collection
+# PDF versions
 
-The actual PDFs have **not** been added yet. For permitted open-access sources, use the download script under scripts/ or obtain PDFs through the university library. Check that each file matches the title, authors and DOI in references.bib.
+Direct PDF links for the sources are in [SOURCES.md](../SOURCES.md). Not all publishers allow their PDFs to be redistributed in a public GitHub repository, so I am keeping links to the original copies rather than uploading restricted files here.
 
-Do not publish or redistribute restricted PDFs. The notes in this repository are preliminary until full texts are checked.
+The Khraisat (2019) and Albshaier (2024) articles are open access under CC BY 4.0. Other papers may have different conditions.
