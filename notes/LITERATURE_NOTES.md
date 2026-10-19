@@ -1,57 +1,53 @@
-# Source-by-source notes (preliminary)
+# Literature notes
 
-**IMPORTANT:** These are **screening notes based on abstracts and accessible source descriptions**, not a claim of complete critical reading. Revisit each source, check methodological detail and add page numbers before submitting as an in-depth literature review.
+These are my first notes based on the papers' abstracts and the material available online. I still need to read some of them in more detail once I decide on the topic.
 
-## 1. Khraisat et al. (2019) — `khraisat2019survey`
-**What it covers:** Survey and categorization of signature-based and anomaly-based intrusion detection; datasets and attack evasion issues.
-**Useful for thesis:** Introductory definition of IDS, comparison of paradigms, and a map of challenges to motivate why detection performance must be tested critically.
-**Possible section:** Background / Related work.
-**Question for full read:** Which evaluation limitations are still open in recent work?
-**Limitations:** Survey reflects literature up to 2019; must complement with recent studies.
+## Network intrusion detection
 
-## 2. Ring et al. (2019) — `ring2019survey`
-**What it covers:** Comparison of network intrusion detection datasets using systematic dataset properties.
-**Useful for thesis:** Helps justify dataset choice instead of selecting a popular benchmark without checking recording conditions, labels, capture and representativeness.
-**Possible section:** Data selection / Experimental methodology.
-**Question for full read:** Which listed datasets permit realistic train/test splits?
-**Limitations:** Older survey; assess changes to datasets and later criticisms.
+### Khraisat et al. (2019) — `khraisat2019survey`
+This paper explains different intrusion detection systems, mainly signature-based and anomaly-based detection. It also discusses common datasets and some of the challenges these systems face.
 
-## 3. Sharafaldin et al. (2018) — `sharafaldin2018dataset`
-**What it covers:** Design and characterization of CICIDS2017 with benign and malicious network traffic scenarios, extraction of flow features, and experiments.
-**Useful for thesis:** Primary source documenting a potential experimental dataset. Useful for dataset composition, feature interpretation and baselines.
-**Possible section:** Dataset and preprocessing.
-**Question for full read:** What scenario, day, attack, labeling, and feature issues could bias experiments?
-**Limitations:** Performance on a benchmark does not establish production effectiveness; check later critiques and leakage risk.
+**How I could use it:** As background for explaining what intrusion detection is and why machine learning is used in this area. Since the paper is from 2019, I would also need more recent sources for specific models.
 
-## 4. Sommer & Paxson (2010) — `sommer2010outside`
-**What it covers:** Why machine learning systems for network IDS can struggle when moved from constrained research environments to operational networks.
-**Useful for thesis:** Justification for reporting false positives, generalization and threats to validity rather than accuracy alone.
-**Possible section:** Motivation / Limitations / Evaluation design.
-**Question for full read:** What assumptions distinguish closed-world benchmarks from open-world detection?
-**Limitations:** Early work, primarily conceptual; use newer evidence when choosing current methods.
+### Ring et al. (2019) — `ring2019survey`
+The authors compare datasets used for network intrusion detection and describe properties that matter when choosing a dataset, such as the type of traffic and the way it was collected.
 
-## 5. Sahingoz et al. (2019) — `sahingoz2019phishing`
-**What it covers:** Feature engineering and machine-learning classification for phishing URLs using lexical and NLP-related signals.
-**Useful for thesis:** Foundation for an alternative practical thesis with a supervised classifier and accessible inputs, without network packet analysis.
-**Possible section:** Phishing background / Related work / Features.
-**Question for full read:** Is the evaluation robust against duplicates, changing URLs, domain overlap and temporal leakage?
-**Limitations:** Publisher PDF may require university access; results may not generalize to current phishing campaigns.
+**How I could use it:** If I build and test an intrusion detection model, I need to explain why I selected a particular dataset. This paper could help with that part of the methodology.
 
-## Comparative synthesis
+### Sharafaldin et al. (2018) — `sharafaldin2018dataset`
+This paper introduces the CICIDS2017 dataset, which includes normal network traffic and several types of attacks. It also describes the network setup and the features extracted from traffic.
 
-- **IDS route:** Khraisat provides taxonomy; Ring helps select data; Sharafaldin documents CICIDS2017; Sommer & Paxson warns against weak evaluation.
-- **Phishing route:** Sahingoz establishes a baseline framing, but a dedicated, more recent collection of phishing papers is necessary.
-- **Ransomware route:** Not yet backed by enough literature in this collection. Keep as tentative only.
+**How I could use it:** CICIDS2017 could be the dataset for a practical experiment. I would use the paper when describing the data and the attack categories, and then check whether the dataset has any known limitations.
 
-## Annotation template for next paper
+### Sommer and Paxson (2010) — `sommer2010outside`
+This paper discusses why machine learning models that work well in research experiments might still be difficult to use in real networks. It points out problems such as false alarms and the differences between testing and real-world traffic.
 
-- Reference key and complete citation:
-- Full-text status / version / date accessed:
-- Research question:
-- Dataset and experimental design:
-- Main reported findings (with page/figure):
-- Method strengths:
-- Limitations / possible bias:
-- Relevance to **my** thesis:
-- What I would adapt or challenge:
-- 2–3 exact page-specific citations:
+**How I could use it:** For deciding how to evaluate a model. I should not only look at accuracy, but also false positives and how realistic the test is.
+
+## Phishing detection
+
+### Sahingoz et al. (2019) — `sahingoz2019phishing`
+The paper uses information from URLs and different machine learning methods to distinguish phishing links from legitimate ones.
+
+**How I could use it:** This could be a starting point if I choose to build a phishing URL detector. I could compare a few models and investigate which URL features are useful.
+
+### Safi and Singh (2023) — `safi2023phishing`
+This review compares different approaches to phishing website detection, including blacklists, visual similarities, machine learning and deep learning. It also looks at datasets used in previous work.
+
+**How I could use it:** To understand which methods already exist and choose a manageable approach for a bachelor's thesis. It would also help me find more specific papers later.
+
+## Ransomware detection
+
+### Albshaier et al. (2024) — `albshaier2024ransomware`
+This review covers ransomware detection methods, including detecting suspicious behavior before files are seriously affected.
+
+**How I could use it:** To see whether I could make a small program that detects suspicious file or process behavior. I would first need to find a safe dataset or sample traces.
+
+### Cen et al. (2024) — `cen2024ransomware`
+This survey focuses on early ransomware detection and the difficulties in recognizing ransomware activity in time.
+
+**How I could use it:** It could help me understand what signals are worth monitoring if I choose ransomware as the topic. Getting realistic data for this area may be more difficult.
+
+## Current thoughts
+
+Network intrusion detection seems the easiest to turn into a measurable practical project because there are public datasets and clear evaluation metrics. Phishing URL detection is also appealing because the input data is simpler. Ransomware detection sounds interesting, but I need to check the data and difficulty before choosing it.
