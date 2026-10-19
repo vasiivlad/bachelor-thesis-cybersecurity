@@ -1,23 +1,17 @@
-# Working thesis options — decision pending
+# Possible thesis topics
 
-These are discussion proposals, **not formally approved thesis titles**.
+I am still deciding between these ideas.
 
-| Option | Draft question | Practical component | Risks | Fit |
-|---|---|---|---|---|
-| A. Network intrusion detection | Can standard ML models identify attacks in network-flow data, and how robust is their evaluation? | Python (pandas, scikit-learn), public dataset, model comparison, clear metrics | Leakage, dataset realism, class imbalance | Best supported by current sources |
-| B. Phishing URL detection | Can interpretable lexical URL features detect phishing, and how does performance change on held-out domains or later samples? | Feature extractor, logistic regression / random forest, small demo | Reliable labeling, overlapping sources, temporal drift | A focused, feasible alternative |
-| C. Ransomware behavioral detection | Which observable file/process behaviors best distinguish ransomware-like activity from benign actions? | Safe, non-malicious simulation or published traces; defensive detector | Access to trustworthy behavioral traces; safe experiment scope | Interesting, but needs targeted literature |
+**1. Detecting network attacks with machine learning**
 
-## Suggested conversation with supervisor
+Use an existing network traffic dataset, such as CICIDS2017, and compare a few models (for example, logistic regression, decision tree and random forest). Look at precision, recall, false alarms and possible dataset issues. This is my current first option.
 
-- Is a comparative empirical project an adequate bachelor's-thesis contribution?
-- Which of A / B / C suits expected difficulty and timeframe?
-- Should the work emphasize explainability, reproducibility, performance, or practical implementation?
-- Which datasets and ethical restrictions apply?
-- How many papers are expected for the *first* review versus final thesis?
+**2. Phishing URL detection**
 
-## Recommendation for discussion
+Build a Python program that checks features of a URL and predicts whether it might be phishing. Compare simple classification algorithms and possibly add a small interface.
 
-Lead with **A** as a working research area while openly stating topic flexibility. If a narrowly scoped Python application is preferred, propose **B**. Keep **C** exploratory pending additional evidence.
+**3. Ransomware behavior detection**
 
-No code, dataset experiments or literature-analysis results have been produced yet.
+Look at file and process activity and try to identify suspicious patterns. I like the idea, but I am not sure yet how to get suitable data safely.
+
+I want to ask my coordinator which idea fits the expected difficulty and what kind of practical implementation would be enough.
